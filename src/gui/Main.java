@@ -15,14 +15,12 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         primaryStage.setTitle("Speed Controller Demo");
-        primaryStage.setScene(new Scene(root, 300, 275));
+        primaryStage.setScene(new Scene(root, 500, 500));
         primaryStage.show();
     }
 
 
     public static void main(String[] args) {
-        //Variable var = fuzzy.step(50, 0.8, 13, 0);
-        //JFuzzyChart.get().chart(var, var.getDefuzzifier(), true);
         launch(args);
     }
 }
