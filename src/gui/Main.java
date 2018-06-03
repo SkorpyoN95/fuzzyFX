@@ -14,17 +14,15 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        primaryStage.setTitle("Hello World");
+        primaryStage.setTitle("Speed Controller Demo");
         primaryStage.setScene(new Scene(root, 300, 275));
         primaryStage.show();
     }
 
 
     public static void main(String[] args) {
-        //launch(args);
-        FuzzyController fuzzy = new FuzzyController("src/logic/car.fcl");
-        fuzzy.drawIOCharts();
-        Variable var = fuzzy.step(50, 0.8, 13, 0);
-        JFuzzyChart.get().chart(var, var.getDefuzzifier(), true);
+        //Variable var = fuzzy.step(50, 0.8, 13, 0);
+        //JFuzzyChart.get().chart(var, var.getDefuzzifier(), true);
+        launch(args);
     }
 }

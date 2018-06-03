@@ -14,7 +14,7 @@ public class FuzzyController {
         JFuzzyChart.get().chart(fis);
     }
 
-    public Variable step(int speed, double friction, double angle, int exp){
+    public Variable step(double speed, double friction, double angle, int exp){
         fis.setVariable("car_speed", speed);
         fis.setVariable("surface", friction);
         fis.setVariable("line", angle);
