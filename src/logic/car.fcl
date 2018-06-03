@@ -27,13 +27,13 @@ FUZZIFY line
 TERM turn := (-90, 1)(-60, 1)(-30, 0)(30,0)(60,1)(90,1);
 TERM curve := (-55, 0)(-45, 1)(-25, 1)(-10, 0)(10, 0)(25, 1)(45, 1)(55, 0);
 TERM straight := (-15, 0)(-5, 1)(5, 1)(15, 0);
-DEFFUZIFY
+END_FUZZIFY
 
 FUZZIFY experience
 TERM beginner := (0, 1)(45, 1)(60, 0);
 TERM advanced := (45, 0)(60, 1)(75, 1)(95, 0);
 TERM pro := (80, 0)(95, 1)(100, 1);
-END FUZZIFY
+END_FUZZIFY
 
 DEFUZZIFY acceleration
 TERM break := (-10, 1)(-5, 1)(0, 0);
@@ -47,7 +47,7 @@ RULEBLOCK ruleset
 AND: MIN;
 ACT: MIN;
 
-RULE 0: IS experience IS beginner AND car_speed IS NOT slow THEN acceleration IS break;
+RULE 0: IF experience IS beginner AND car_speed IS NOT slow THEN acceleration IS break;
 RULE 1: IF experience IS advanced AND car_speed IS fast THEN acceleration IS break;
 RULE 2: IF line IS turn AND car_speed IS moderate AND experience IS NOT pro THEN acceleration IS break;
 RULE 3: IF surface IS icy AND car_speed IS NOT slow AND experience IS NOT pro THEN acceleration IS break WITH 0.5;

@@ -14,10 +14,12 @@ public class FuzzyController {
         JFuzzyChart.get().chart(fis);
     }
 
-    public Variable step(){
-//        fis.setVariable("poziom_natezenia", poziomNatezenia);
-//        fis.setVariable("pora_dnia", poraDnia);
-        //fis.evaluate();
-        return fis.getVariable("zmiana_natezenia");
+    public Variable step(int speed, double friction, double angle, int exp){
+        fis.setVariable("car_speed", speed);
+        fis.setVariable("surface", friction);
+        fis.setVariable("line", angle);
+        fis.setVariable("experience", exp);
+        fis.evaluate();
+        return fis.getVariable("acceleration");
     }
 }
