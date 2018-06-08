@@ -42,7 +42,7 @@ public class WayGenerator {
             case "asphalt": friction = RND.nextDouble() * 0.25 + 0.75; break;
             default: break;
         }
-        double angle = narrow ? RND.nextDouble() * 40 + 60 : RND.nextDouble() * 40 + 20;
+        double angle = narrow ? RND.nextDouble() * 40 + 50 : RND.nextDouble() * 40 + 20;
         for(int i = 0; i < 5; ++i)
             way.add(new Pair<>(angle, friction));
     }
